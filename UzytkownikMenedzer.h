@@ -25,7 +25,7 @@ public:
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     Uzytkownik podajDaneNowegoUzytkownika();
-
+    void wczytajUzytkownikowZPliku();
 };
 
 #endif
