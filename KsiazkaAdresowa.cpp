@@ -1,6 +1,8 @@
 #include "KsiazkaAdresowa.h"
 
-KsiazkaAdresowa::KsiazkaAdresowa (string nazwa) : uzytkownikMenedzer(nazwa), idZalogowanegoUzytkownika(0) {
+KsiazkaAdresowa::KsiazkaAdresowa (string nazwa, string nazwa2) :
+    uzytkownikMenedzer(nazwa), adresaciMenedzer(nazwa2),
+    idZalogowanegoUzytkownika(0), idOstatniegoAdresata(0), idUsunietegoAdresata(0) {
     uzytkownikMenedzer.wczytajUzytkownikowZPliku();
 }
 void KsiazkaAdresowa::rejestracjaUzytkownika() {
@@ -46,6 +48,7 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
 }
 void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
 {
+    //idOstatniegoAdresata = adresaciMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
     system("cls");
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
     cout << "---------------------------" << endl;

@@ -22,7 +22,7 @@ public:
     //void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     //vector <Uzytkownik> wczytajUzytkownikowZPliku();
     //void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> uzytkownicy);
-    PlikZAdresatami(string nazwa) : nazwaPlikuZAdresatami(nazwa) {};
+    PlikZAdresatami(string nazwa2) : nazwaPlikuZAdresatami(nazwa2) {};
 };
 
 #endif
