@@ -12,7 +12,7 @@ class KsiazkaAdresowa {
     UzytkownikMenedzer uzytkownikMenedzer;
     AdresaciMenedzer adresaciMenedzer;
     int idZalogowanegoUzytkownika;
-    int idOstatniegoAdresata;
+    //int idOstatniegoAdresata;
     int idUsunietegoAdresata;
 public:
     KsiazkaAdresowa(string nazwa, string nazwa2);
@@ -23,6 +23,7 @@ public:
     void logowanieUzytkownika();
 
     void wybierzOpcjeZMenuUzytkownika();
+    void dodajAdresata();
     void zmianaHaslaZalogowanegoUzytkownika();
 
     int pobierzIdZalogowanegoUzytkownika();

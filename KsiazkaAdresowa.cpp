@@ -2,7 +2,7 @@
 
 KsiazkaAdresowa::KsiazkaAdresowa (string nazwa, string nazwa2) :
     uzytkownikMenedzer(nazwa), adresaciMenedzer(nazwa2),
-    idZalogowanegoUzytkownika(0), idOstatniegoAdresata(0), idUsunietegoAdresata(0) {
+    idZalogowanegoUzytkownika(0), /*idOstatniegoAdresata(0),*/idUsunietegoAdresata(0) {
     uzytkownikMenedzer.wczytajUzytkownikowZPliku();
 }
 void KsiazkaAdresowa::rejestracjaUzytkownika() {
@@ -48,7 +48,7 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
 }
 void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
 {
-    //idOstatniegoAdresata = adresaciMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+    adresaciMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
     system("cls");
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
     cout << "---------------------------" << endl;
@@ -66,6 +66,7 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     switch (MetodyPomocnicze::wczytajZnak()) {
     case '1':
     //    idOstatniegoAdresata = dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata);
+        dodajAdresata();
         break;
     /*case '2':
         wyszukajAdresatowPoImieniu(adresaci);
@@ -94,4 +95,7 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
 }
 void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika() {
     uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+}
+void KsiazkaAdresowa::dodajAdresata() {
+    adresaciMenedzer.dodajAdresata(idZalogowanegoUzytkownika);
 }
