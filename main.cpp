@@ -11,8 +11,7 @@ int main()
                 ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
             }
             else {
-                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
-                return 0;
+                ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
             }
     }
     /*ksiazkaAdresowa.wczytajUzytkownikowZPliku():
