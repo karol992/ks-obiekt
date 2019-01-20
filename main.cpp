@@ -6,8 +6,15 @@ using namespace std;
 int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
-    ksiazkaAdresowa.logowanieUzytkownika();
-    cout << ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() << endl;
+    while (true) {
+            if (ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() == 0) {
+                ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
+            }
+            else {
+                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+                return 0;
+            }
+    }
     /*ksiazkaAdresowa.wczytajUzytkownikowZPliku():
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
     ksiazkaAdresowa.rejestracjaUzytkownika();

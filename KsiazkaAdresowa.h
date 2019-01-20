@@ -11,12 +11,16 @@ class KsiazkaAdresowa {
     int idZalogowanegoUzytkownika;
 public:
     KsiazkaAdresowa(string nazwa);
-    void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
+
+    void wybierzOpcjeZMenuGlownego();
+    void rejestracjaUzytkownika();
     void logowanieUzytkownika();
+
+    void zmianaHaslaZalogowanegoUzytkownika();
+
     int pobierzIdZalogowanegoUzytkownika();
     void ustawIDZalogowanegoUzytkownika(int liczba);
-    void wybierzOpcjeZMenuGlownego();
 };
 
 #endif

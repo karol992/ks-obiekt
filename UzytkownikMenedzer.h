@@ -13,12 +13,14 @@ using namespace std;
 
 class UzytkownikMenedzer {
     PlikZUzytkownikami plikZUzytkownikami;
+    fstream plikTekstowy;
 
     vector <Uzytkownik> uzytkownicy;
 
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
-
+    void zapiszWszystkichUzytkownikowDoPliku();
+    string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
 
 public:
     UzytkownikMenedzer(string nazwa) : plikZUzytkownikami(nazwa) {};
@@ -27,6 +29,7 @@ public:
     Uzytkownik podajDaneNowegoUzytkownika();
     void wczytajUzytkownikowZPliku();
     int logowanieUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
 };
 
 #endif
