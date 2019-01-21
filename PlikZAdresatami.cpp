@@ -1,7 +1,6 @@
 #include "PlikZAdresatami.h"
 
-vector<Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int id)
-{
+vector<Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int id) {
     idZalogowanegoUzytkownika = id;
     Adresat adresat;
     vector<Adresat> adresaci;

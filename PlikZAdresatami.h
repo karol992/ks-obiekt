@@ -23,9 +23,6 @@ class PlikZAdresatami {
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     string zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(Adresat adresat);
 public:
-    //void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
-    //vector <Uzytkownik> wczytajUzytkownikowZPliku();
-    //void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> uzytkownicy);
     PlikZAdresatami(string nazwa2) : nazwaPlikuZAdresatami(nazwa2), idOstatniegoAdresata(0) {};
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int id);
     int pobierzIdOstatniegoAdresata();

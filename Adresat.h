@@ -30,5 +30,7 @@ public:
     string pobierzNumerTelefonu();
     string pobierzEmail();
     string pobierzAdres();
+
+    void wyswietlDaneAdresata();
 };
 #endif

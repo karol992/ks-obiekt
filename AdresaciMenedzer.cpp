@@ -54,4 +54,26 @@ string AdresaciMenedzer::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst
     }
     return tekst;
 }
+void AdresaciMenedzer::wyswietlWszystkichAdresatow()
+{
+    system("cls");
+    if (!adresaci.empty())
+    {
+        cout << "             >>> ADRESACI <<<" << endl;
+        cout << "-----------------------------------------------" << endl;
+        for (int i=0; i < adresaci.size(); i++)
+        {
+            adresaci[i].wyswietlDaneAdresata();
+        }
+        cout << endl;
+    }
+    else
+    {
+        cout << endl << "Ksiazka adresowa jest pusta." << endl << endl;
+    }
+    system("pause");
+}
+void AdresaciMenedzer::oproznijAdresatow() {
+    adresaci.clear();
+}
 //

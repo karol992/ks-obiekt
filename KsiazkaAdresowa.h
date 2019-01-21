@@ -12,8 +12,6 @@ class KsiazkaAdresowa {
     UzytkownikMenedzer uzytkownikMenedzer;
     AdresaciMenedzer adresaciMenedzer;
     int idZalogowanegoUzytkownika;
-    //int idOstatniegoAdresata;
-    int idUsunietegoAdresata;
 public:
     KsiazkaAdresowa(string nazwa, string nazwa2);
     void wypiszWszystkichUzytkownikow();
@@ -24,10 +22,11 @@ public:
 
     void wybierzOpcjeZMenuUzytkownika();
     void dodajAdresata();
+    void wyswietlWszystkichAdresatow();
     void zmianaHaslaZalogowanegoUzytkownika();
 
     int pobierzIdZalogowanegoUzytkownika();
-    void ustawIDZalogowanegoUzytkownika(int liczba);
+    void ustawIdZalogowanegoUzytkownika(int liczba);
 };
 
 #endif
