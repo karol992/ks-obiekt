@@ -13,7 +13,6 @@ using namespace std;
 
 class UzytkownikMenedzer {
     PlikZUzytkownikami plikZUzytkownikami;
-    fstream plikTekstowy;
 
     vector <Uzytkownik> uzytkownicy;
 
