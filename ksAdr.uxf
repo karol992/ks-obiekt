@@ -11,19 +11,22 @@
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 -
-- idZalogowanegoUzytkownika : Integer
 - uzytkownikMenedzer : UzytkownikMenedzer
-- adresaciMenedzer : AdresaciMenedzer
+- *adresaciMenedzer : AdresaciMenedzer
+- NAZWA_PLIKU_Z_ADRESATAMI : String
 -
 + KsiazkaAdresowa()
++ ~KsiazkaAdresowa()
 + wypiszWszystkichUzytkownikow() : void
-+ wybierzOpcjeZMenuGlownego() : void
++ pobierzIdZalogowanegoUzytkownika() : Integer 
++wybierzOpcjeZMenuGlownego() : void
 + rejestracjaUzytkownika() : void
 + logowanieUzytkownika() : void
 + wybierzOpcjeZMenuUzytkownika() : void
 + dodajAdresata() : void
 + wyswietlWszystkichAdresatow() : void
 + zmianaHaslaZalogowanegoUzytkownika() : void
++ wylogowanieUzytkownika() : void
 
 
 </panel_attributes>
@@ -47,6 +50,7 @@
 - email : string
 - adres : string
 -
++ Adresat()
 + wyswietlDaneAdresata : void</panel_attributes>
     <additional_attributes/>
   </element>
@@ -56,21 +60,18 @@
       <x>18</x>
       <y>297</y>
       <w>360</w>
-      <h>252</h>
+      <h>135</h>
     </coordinates>
     <panel_attributes>AdresaciMenedzer
 -
 - adresaci : vector &lt;Adresat&gt;
 - plikZAdresatami : PlikZAdresatami
+- ID_ZALOGOWANEGO_UZYTKOWNIKA : Integer
 -
 + AdresaciMenedzer()
-+ wczytajAdresatowZalogowanegoUzytkownikaZPliku() : void
 + void dodajAdresata() : void
 + void wyswietlWszystkichAdresatow() : void
-+ void oproznijAdresatow() : void
 - podajDaneNowegoAdresata() : Adresat
-- wczytajLinie() : String
-- zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String
 
 </panel_attributes>
     <additional_attributes/>
@@ -85,7 +86,7 @@
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
 -
-- nazwaPlikuZUzytkownikami : const String
+- NAZWA_PLIKU_Z_UZYTKOWNIKAMI : String
 - plikTekstowy : fstream
 -
 + PlikZUzytkownikami()
@@ -112,6 +113,8 @@
 + wczytajZnak() : Char
 + konwersjaStringNaInt() : Integer
 + czyPlikJestPusty() : Bool
++ wczytajLinie() : String
++ zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -127,6 +130,7 @@
 -
 - uzytkownicy : vector &lt;Uzytkownik&gt;
 - plikZUzytkownikami : PlikZUzytkownikami
+- idZalogowanegoUzytkownika : Integer
 -
 + UzytkownikMenedzer()
 + rejestracjaUzytkownika () : void
@@ -135,6 +139,7 @@
 + wczytajUzytkownikowZPliku() : void
 + logowanieUzytkownika() : Integer
 + zmianaHaslaZalogowanegoUzytkownika : void
++ wylogowanieUzytkownika() : void
 - pobierzIdNowegoUzytkownika() : Integer
 - czyIstniejeLogin() : Bool
 - zapiszWszystkichUzytkownikowDoPliku() : void
@@ -153,15 +158,14 @@
     </coordinates>
     <panel_attributes>PlikZAdresatami
 -
-- nazwaPlikuZAdresatami : const String
+- NAZWA_PLIKU_Z_ADRESATAMI : String
 - plikTekstowy : fstream
 - idOstatniegoAdresata : Integer
-- idZalogowanegoUzytkownika : Integer
 -
 + PlikZAdresatami()
 + wczytajAdresatowZalogowanegoUzytkownikaZPliku() : vector &lt;Adresat&gt;
 + pobierzIdOstatniegoAdresata() : Integer
-+ dopiszAdresataDoPliku() : void
++ dopiszAdresataDoPliku() : bool
 - pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami() : Integer
 - pobierzLiczbe() : String
 - pobierzDaneAdresata() : Adresat

@@ -5,7 +5,6 @@
 #include <vector>
 #include <windows.h>
 #include <fstream>
-#include <algorithm>
 #include <sstream>
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
@@ -14,18 +13,17 @@ using namespace std;
 
 class AdresaciMenedzer {
     PlikZAdresatami plikZAdresatami;
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
 
     vector <Adresat> adresaci;
 
-    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
-    string wczytajLinie();
-    string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    Adresat podajDaneNowegoAdresata();
 public:
-    AdresaciMenedzer(string nazwa2) : plikZAdresatami(nazwa2) {};
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
-    void dodajAdresata(int idZalogowanegoUzytkownika);
+    AdresaciMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika) {
+        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    };
+    void dodajAdresata();
     void wyswietlWszystkichAdresatow();
-    void oproznijAdresatow();
 };
 
 #endif

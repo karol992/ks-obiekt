@@ -4,6 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include <algorithm>
 
 using namespace std;
 
@@ -14,6 +15,8 @@ public:
     static char wczytajZnak();
     static int konwersjaStringNaInt(string liczba);
     static bool czyPlikJestPusty(fstream &plikTekstowy);
+    static string wczytajLinie();
+    static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
 };
 
 #endif
