@@ -20,6 +20,7 @@ class AdresaciMenedzer {
     Adresat podajDaneNowegoAdresata();
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
     int podajIdWybranegoAdresata();
+    char wybierzOpcjeZMenuEdycja();
 public:
     AdresaciMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika) {
         adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
@@ -29,6 +30,7 @@ public:
     void wyszukajAdresatowPoNazwisku();
     void wyswietlWszystkichAdresatow();
     void usunAdresata();
+    void edytujAdresata();
 };
 
 #endif

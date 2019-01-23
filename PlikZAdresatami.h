@@ -25,6 +25,7 @@ class PlikZAdresatami {
     void usunOdczytywanyPlik(string nazwaPlikuZRozszerzeniem);
     void zmienNazweTymczasowegoPlikuNaNazweOdczytywanegoPliku(string nazwaTymczasowegoPlikuZRozszerzeniem, string nazwaPlikuZRozszerzeniem);
     void pobierzZPlikuIdOstatniegoAdresata();
+    void edytujWybranaLinieWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
 public:
     PlikZAdresatami(string nazwaPlikuZAdresatami) : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami),
     nazwaTymczasowegoPlikuZAdresatami(nazwaPlikuZAdresatami.insert( nazwaPlikuZAdresatami.size()-4 ,"_tymczasowo")) {
@@ -36,6 +37,7 @@ public:
     int zwrocNumerLiniiSzukanegoAdresata(int idAdresata);
     void usunWybranaLinieWPliku(int numerUsuwanejLinii);
     void podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata);
+    void zaktualizujDaneEdytowanegoAdresata(Adresat adresat, int idEdytowanegoAdresata);
 };
 
 #endif
