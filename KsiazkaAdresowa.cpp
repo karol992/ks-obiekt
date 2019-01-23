@@ -36,6 +36,10 @@ void KsiazkaAdresowa::dodajAdresata() {
         system("pasue");
     }
 }
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu() {
+    adresaciMenedzer->wyszukajAdresatowPoImieniu();
+}
+
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
     adresaciMenedzer->wyswietlWszystkichAdresatow();
 }
@@ -71,7 +75,7 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
     cout << "---------------------------" << endl;
     cout << "1. Dodaj adresata" << endl;
-    //cout << "2. Wyszukaj po imieniu" << endl;
+    cout << "2. Wyszukaj po imieniu" << endl;
     //cout << "3. Wyszukaj po nazwisku" << endl;
     cout << "4. Wyswietl adresatow" << endl;
     //cout << "5. Usun adresata" << endl;
@@ -83,13 +87,12 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     cout << "Twoj wybor: ";
     switch (MetodyPomocnicze::wczytajZnak()) {
     case '1':
-    //    idOstatniegoAdresata = dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata);
         dodajAdresata();
         break;
-    /*case '2':
-        wyszukajAdresatowPoImieniu(adresaci);
+    case '2':
+        wyszukajAdresatowPoImieniu();
         break;
-    case '3':
+    /*case '3':
         wyszukajAdresatowPoNazwisku(adresaci);
         break;*/
     case '4':
