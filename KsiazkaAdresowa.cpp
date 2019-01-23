@@ -3,6 +3,9 @@
 int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika() {
     return uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
 }
+bool KsiazkaAdresowa::czyUzytkownikJestZalogowany() {
+    uzytkownikMenedzer.czyUzytkownikJestZalogowany();
+}
 void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
     uzytkownikMenedzer.wypiszWszystkichUzytkownikow();
 }

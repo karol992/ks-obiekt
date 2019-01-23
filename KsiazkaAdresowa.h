@@ -23,6 +23,7 @@ public:
     }
     void wypiszWszystkichUzytkownikow();
     int pobierzIdZalogowanegoUzytkownika();
+    bool czyUzytkownikJestZalogowany();
 
     void wybierzOpcjeZMenuGlownego();
     void rejestracjaUzytkownika();
