@@ -8,11 +8,8 @@ int main()
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt","Adresaci.txt");
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
 
-
-
-
     while (true) {
-            if (ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() == 0) {
+            if (!ksiazkaAdresowa.czyUzytkownikJestZalogowany()) {
                 ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
             }
             else {
