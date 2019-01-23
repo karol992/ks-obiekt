@@ -36,6 +36,7 @@ public:
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
     void wyswietlWszystkichAdresatow();
+    void usunAdresata();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wylogowanieUzytkownika();
 };
