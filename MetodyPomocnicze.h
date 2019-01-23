@@ -17,6 +17,7 @@ public:
     static bool czyPlikJestPusty(fstream &plikTekstowy);
     static string wczytajLinie();
     static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    static int wczytajLiczbeCalkowita();
 };
 
 #endif

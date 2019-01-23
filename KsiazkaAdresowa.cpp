@@ -45,6 +45,9 @@ void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku() {
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
     adresaciMenedzer->wyswietlWszystkichAdresatow();
 }
+void KsiazkaAdresowa::usunAdresata() {
+    adresaciMenedzer->usunAdresata();
+}
 void KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
     system("cls");
     cout << "    >>> MENU  GLOWNE <<<" << endl;
@@ -71,8 +74,7 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
     }
 
 }
-void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
-{
+void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
     system("cls");
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
     cout << "---------------------------" << endl;
@@ -80,7 +82,7 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     cout << "2. Wyszukaj po imieniu" << endl;
     cout << "3. Wyszukaj po nazwisku" << endl;
     cout << "4. Wyswietl adresatow" << endl;
-    //cout << "5. Usun adresata" << endl;
+    cout << "5. Usun adresata" << endl;
     //cout << "6. Edytuj adresata" << endl;
     cout << "---------------------------" << endl;
     cout << "7. Zmien haslo" << endl;
@@ -100,11 +102,10 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     case '4':
         wyswietlWszystkichAdresatow();
         break;
-    /*case '5':
-        idUsunietegoAdresata = usunAdresata(adresaci);
-        idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
+    case '5':
+        usunAdresata();
         break;
-    case '6':
+    /*case '6':
         edytujAdresata(adresaci);
         break;*/
     case '7':
