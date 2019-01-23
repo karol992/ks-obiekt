@@ -39,7 +39,9 @@ void KsiazkaAdresowa::dodajAdresata() {
 void KsiazkaAdresowa::wyszukajAdresatowPoImieniu() {
     adresaciMenedzer->wyszukajAdresatowPoImieniu();
 }
-
+void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku() {
+    adresaciMenedzer->wyszukajAdresatowPoNazwisku();
+}
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
     adresaciMenedzer->wyswietlWszystkichAdresatow();
 }
@@ -76,7 +78,7 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     cout << "---------------------------" << endl;
     cout << "1. Dodaj adresata" << endl;
     cout << "2. Wyszukaj po imieniu" << endl;
-    //cout << "3. Wyszukaj po nazwisku" << endl;
+    cout << "3. Wyszukaj po nazwisku" << endl;
     cout << "4. Wyswietl adresatow" << endl;
     //cout << "5. Usun adresata" << endl;
     //cout << "6. Edytuj adresata" << endl;
@@ -92,9 +94,9 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     case '2':
         wyszukajAdresatowPoImieniu();
         break;
-    /*case '3':
-        wyszukajAdresatowPoNazwisku(adresaci);
-        break;*/
+    case '3':
+        wyszukajAdresatowPoNazwisku();
+        break;
     case '4':
         wyswietlWszystkichAdresatow();
         break;
