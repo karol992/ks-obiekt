@@ -34,6 +34,7 @@ public:
     void wybierzOpcjeZMenuUzytkownika();
     void dodajAdresata();
     void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
     void wyswietlWszystkichAdresatow();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wylogowanieUzytkownika();
