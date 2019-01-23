@@ -18,11 +18,13 @@ class AdresaciMenedzer {
     vector <Adresat> adresaci;
 
     Adresat podajDaneNowegoAdresata();
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
 public:
     AdresaciMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika) {
         adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
     void dodajAdresata();
+    void wyszukajAdresatowPoImieniu();
     void wyswietlWszystkichAdresatow();
 };
 

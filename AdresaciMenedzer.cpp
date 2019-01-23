@@ -1,7 +1,6 @@
 #include "AdresaciMenedzer.h"
 
-void AdresaciMenedzer::dodajAdresata()
-{
+void AdresaciMenedzer::dodajAdresata() {
     Adresat adresat;
 
     system("cls");
@@ -40,8 +39,7 @@ Adresat AdresaciMenedzer::podajDaneNowegoAdresata() {
 
     return adresat;
 }
-void AdresaciMenedzer::wyswietlWszystkichAdresatow()
-{
+void AdresaciMenedzer::wyswietlWszystkichAdresatow() {
     system("cls");
     if (!adresaci.empty())
     {
@@ -58,5 +56,41 @@ void AdresaciMenedzer::wyswietlWszystkichAdresatow()
         cout << endl << "Ksiazka adresowa jest pusta." << endl << endl;
     }
     system("pause");
+}
+void AdresaciMenedzer::wyszukajAdresatowPoImieniu() {
+    string imiePoszukiwanegoAdresata = "";
+    int iloscAdresatow = 0;
+
+    system("cls");
+    if (!adresaci.empty())
+    {
+        cout << ">>> WYSZUKIWANIE ADRESATOW O IMIENIU <<<" << endl << endl;
+
+        cout << "Wyszukaj adresatow o imieniu: ";
+        imiePoszukiwanegoAdresata = MetodyPomocnicze::wczytajLinie();
+        imiePoszukiwanegoAdresata = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(imiePoszukiwanegoAdresata);
+
+        for (int i = 0; i < adresaci.size(); i++)
+        {
+            if (adresaci[i].pobierzImie() == imiePoszukiwanegoAdresata)
+            {
+                adresaci[i].wyswietlDaneAdresata();
+                iloscAdresatow++;
+            }
+        }
+        wyswietlIloscWyszukanychAdresatow(iloscAdresatow);
+    }
+    else
+    {
+        cout << endl << "Ksiazka adresowa jest pusta" << endl << endl;
+    }
+    cout << endl;
+    system("pause");
+}
+void AdresaciMenedzer::wyswietlIloscWyszukanychAdresatow(int iloscAdresatow) {
+    if (iloscAdresatow == 0)
+        cout << endl << "W ksiazce adresowej nie ma adresatow z tymi danymi." << endl;
+    else
+        cout << endl << "Ilosc adresatow w ksiazce adresowej wynosi: " << iloscAdresatow << endl << endl;
 }
 //
