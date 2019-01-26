@@ -118,7 +118,6 @@ bool PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat) {
         }
         ++idOstatniegoAdresata;
         plikTekstowy.close();
-        system("pause");
         return true;
     }
     else
@@ -168,7 +167,7 @@ int PlikZAdresatami::zwrocNumerLiniiSzukanegoAdresata(int idAdresata) {
     }
     return 0;
 }
-void PlikZAdresatami::usunWybranaLinieWPliku(int numerUsuwanejLinii) {
+void PlikZAdresatami::usunWybranaLinieWPliku(int numerUsuwanejLinii, int idUsuwanegoAdresata) {
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
     string wczytanaLinia = "";
     int numerWczytanejLinii = 1;
@@ -197,8 +196,10 @@ void PlikZAdresatami::usunWybranaLinieWPliku(int numerUsuwanejLinii) {
         tymczasowyPlikTekstowy.close();
 
         usunOdczytywanyPlik(NAZWA_PLIKU_Z_ADRESATAMI);
-        system("pause");
         zmienNazweTymczasowegoPlikuNaNazweOdczytywanegoPliku(nazwaTymczasowegoPlikuZAdresatami, NAZWA_PLIKU_Z_ADRESATAMI);
+    }
+    if (idUsuwanegoAdresata == idOstatniegoAdresata) {
+        pobierzZPlikuIdOstatniegoAdresata();
     }
 }
 void PlikZAdresatami::usunOdczytywanyPlik(string nazwaPlikuZRozszerzeniem) {
@@ -210,11 +211,6 @@ void PlikZAdresatami::zmienNazweTymczasowegoPlikuNaNazweOdczytywanegoPliku(strin
     if (rename(nazwaTymczasowegoPlikuZRozszerzeniem.c_str(), nazwaPlikuZRozszerzeniem.c_str()) == 0) {}
     else
         cout << "Nazwa pliku nie zostala zmieniona." << nazwaPlikuZRozszerzeniem << endl;
-}
-void PlikZAdresatami::podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata) {
-    if (idUsuwanegoAdresata == idOstatniegoAdresata) {
-        pobierzZPlikuIdOstatniegoAdresata();
-    }
 }
 void PlikZAdresatami::pobierzZPlikuIdOstatniegoAdresata() {
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";

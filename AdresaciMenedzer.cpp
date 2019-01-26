@@ -142,11 +142,10 @@ void AdresaciMenedzer::usunAdresata() {
             {
                 numerLiniiUsuwanegoAdresata = plikZAdresatami.zwrocNumerLiniiSzukanegoAdresata(idUsuwanegoAdresata);
 
-                plikZAdresatami.usunWybranaLinieWPliku(numerLiniiUsuwanegoAdresata);
+                plikZAdresatami.usunWybranaLinieWPliku(numerLiniiUsuwanegoAdresata,idUsuwanegoAdresata);
                 adresaci.erase(itr);
                 cout << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
-                plikZAdresatami.podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsuwanegoAdresata);
                 return;
             }
             else
